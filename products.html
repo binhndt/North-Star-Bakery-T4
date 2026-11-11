@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse North Star Bakery's breads, pastries, and cakes, with brief descriptions and price ranges.">
+  <title>Our Products | North Star Bakery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a href="#main-content">Skip to main content</a>
+
+  <header>
+    <a href="index.html"><img src="Bakery_c/bakery-logo_c.png" alt="North Star Bakery logo, a bread loaf with a wheat sprig emblem - return to home page" width="120"></a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" aria-current="page">Our Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <h1>Our Products</h1>
+    <p>Everything is baked fresh daily. Prices are approximate ranges, and we do not take payment online. Send us a pre-order request and we will confirm the details with you.</p>
+
+    <section id="my-list" aria-labelledby="list-heading">
+      <h2 id="list-heading">My Pre-Order List</h2>
+      <p id="list-status" aria-live="polite">Your list is empty. Choose "Add to pre-order list" on any item below.</p>
+      <ul id="saved-list"></ul>
+      <div id="list-actions" hidden>
+        <a href="contact.html">Request these items</a>
+        <button type="button" id="clear-list" class="small-btn">Clear list</button>
+      </div>
+    </section>
+
+    <img src="Bakery_c/bakery-bread_c.png" alt="Crusty artisan loaves, including a dark seeded loaf and flour-dusted rounds, stacked in a bakery display case" width="500">
+
+    <section>
+      <h2>Breads</h2>
+      <p>Price range: $6 to $9 per loaf</p>
+      <div class="card-row">
+        <article>
+          <h3>Country Sourdough</h3>
+          <p>A tangy, slow-fermented loaf with a crisp crust and a soft, chewy crumb.</p>
+          <button type="button" class="save-btn" data-id="country-sourdough" aria-pressed="false">Add to pre-order list</button>
+        </article>
+        <article>
+          <h3>Honey Oat Sandwich Loaf</h3>
+          <p>A soft, lightly sweet everyday bread that is perfect for toast and lunchboxes.</p>
+          <button type="button" class="save-btn" data-id="honey-oat-loaf" aria-pressed="false">Add to pre-order list</button>
+        </article>
+        <article>
+          <h3>Rosemary Focaccia</h3>
+          <p>An olive oil focaccia topped with fresh rosemary and flaky sea salt.</p>
+          <button type="button" class="save-btn" data-id="rosemary-focaccia" aria-pressed="false">Add to pre-order list</button>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pastries</h2>
+      <p>Price range: $3 to $6 each</p>
+      <div class="card-row">
+        <article>
+          <h3>Butter Croissant</h3>
+          <p>Golden, flaky layers made with real butter and baked every morning.</p>
+          <button type="button" class="save-btn" data-id="butter-croissant" aria-pressed="false">Add to pre-order list</button>
+        </article>
+        <article>
+          <h3>Cinnamon Morning Bun</h3>
+          <p>A soft spiral of cinnamon sugar finished with a light vanilla glaze.</p>
+          <button type="button" class="save-btn" data-id="cinnamon-morning-bun" aria-pressed="false">Add to pre-order list</button>
+        </article>
+        <article>
+          <h3>Seasonal Fruit Danish</h3>
+          <p>Buttery pastry filled with cream cheese and topped with fruit of the season.</p>
+          <button type="button" class="save-btn" data-id="seasonal-fruit-danish" aria-pressed="false">Add to pre-order list</button>
+        </article>
+        <article>
+          <h3>Chocolate Chip Cookie</h3>
+          <p>A big, chewy cookie loaded with chocolate chunks and finished with a pinch of sea salt.</p>
+          <button type="button" class="save-btn" data-id="chocolate-chip-cookie" aria-pressed="false">Add to pre-order list</button>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cakes</h2>
+      <p>Price range: $28 to $65 per cake, with custom designs quoted on request</p>
+      <div class="card-row">
+        <article>
+          <h3>Classic Celebration Cake</h3>
+          <p>Layers of vanilla or chocolate cake with buttercream, made for birthdays and gatherings.</p>
+          <button type="button" class="save-btn" data-id="classic-celebration-cake" aria-pressed="false">Add to pre-order list</button>
+        </article>
+        <article>
+          <h3>Lemon Blueberry Cake</h3>
+          <p>A bright, moist lemon cake filled with blueberry compote and whipped frosting.</p>
+          <button type="button" class="save-btn" data-id="lemon-blueberry-cake" aria-pressed="false">Add to pre-order list</button>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Our Signature Loaf</h2>
+      <figure>
+        <img src="Bakery_c/bakery-signature-loaf_c.png" alt="North Star Bakery's Signature Loaf, a round, flour-dusted artisan loaf with a scored crust, resting in a checked kitchen towel" width="500">
+        <figcaption>The North Star Signature Loaf: our slow-fermented house bread, baked fresh every morning.</figcaption>
+      </figure>
+      <p>Ready to order? <a href="contact.html">Send a pre-order request</a> and we will have it waiting for you.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+    <address>
+      218 Orchard Street, Duluth, MN 55802<br>
+      Phone: <a href="tel:+12185550176">(218) 555-0176</a><br>
+      Email: <a href="mailto:orders@northstarbakery.example">orders@northstarbakery.example</a>
+    </address>
+  </footer>
+</body>
+</html>

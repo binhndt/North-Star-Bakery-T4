@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send a pre-order or inquiry to North Star Bakery and find our location and hours.">
+  <title>Contact Us | North Star Bakery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a href="#main-content">Skip to main content</a>
+
+  <header>
+    <a href="index.html"><img src="Bakery_c/bakery-logo_c.png" alt="North Star Bakery logo, a bread loaf with a wheat sprig emblem - return to home page" width="120"></a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" aria-current="page">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <h1>Contact Us</h1>
+
+    <section>
+      <h2>Pre-Order and Inquiry Form</h2>
+      <p>Tell us what you would like and we will reply by email to confirm. Please allow at least 48 hours for pre-orders. Fields marked "required" must be completed.</p>
+
+      <div id="form-status" role="status" tabindex="-1" hidden></div>
+      <p id="prefill-note" hidden></p>
+
+      <form id="contact-form" action="https://example.com/preorder" method="post" novalidate>
+        <fieldset>
+          <legend>Your Information</legend>
+          <p>
+            <label for="name">Name (required)</label><br>
+            <input type="text" id="name" name="name" required minlength="2" maxlength="60" autocomplete="name" aria-describedby="name-error">
+            <span class="error" id="name-error" aria-live="polite"></span>
+          </p>
+          <p>
+            <label for="email">Email (required)</label><br>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
+            <span class="error" id="email-error" aria-live="polite"></span>
+          </p>
+          <p>
+            <label for="phone">Phone (optional, format: 218-555-0176)</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Enter a phone number in the format 218-555-0176" autocomplete="tel" aria-describedby="phone-error">
+            <span class="error" id="phone-error" aria-live="polite"></span>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Request (request type required)</legend>
+          <p>
+            <input type="radio" id="type-preorder" name="request-type" value="pre-order" required>
+            <label for="type-preorder">Pre-order</label><br>
+            <input type="radio" id="type-question" name="request-type" value="general-question">
+            <label for="type-question">General question</label><br>
+            <input type="radio" id="type-event" name="request-type" value="event-inquiry">
+            <label for="type-event">Event or custom cake inquiry</label>
+            <span class="error" id="type-error" aria-live="polite"></span>
+          </p>
+          <p>
+            <label for="pickup-date">Pickup date (for pre-orders)</label><br>
+            <input type="date" id="pickup-date" name="pickup-date" aria-describedby="pickup-date-error">
+            <span class="error" id="pickup-date-error" aria-live="polite"></span>
+          </p>
+          <p>
+            <label for="details">Item details or question (required)</label><br>
+            <textarea id="details" name="details" rows="5" cols="40" required minlength="10" maxlength="500" aria-describedby="details-error"></textarea>
+            <span class="error" id="details-error" aria-live="polite"></span>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Allergies and Dietary Needs</legend>
+          <p>
+            <label for="allergies">Allergy notes, if applicable</label><br>
+            <textarea id="allergies" name="allergies" rows="3" cols="40" maxlength="300" aria-describedby="allergies-error"></textarea>
+            <span class="error" id="allergies-error" aria-live="polite"></span>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Send Request</button>
+          <button type="reset">Clear Form</button>
+        </p>
+      </form>
+    </section>
+
+    <div class="info-row">
+    <section>
+      <h2>Location</h2>
+      <p>North Star Bakery<br>
+      218 Orchard Street<br>
+      Duluth, MN 55802</p>
+      <p>Call us at <a href="tel:+12185550176">(218) 555-0176</a> with any urgent questions.</p>
+    </section>
+
+    <section>
+      <h2>Hours of Operation</h2>
+      <table>
+        <caption>Weekly hours</caption>
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Monday</th>
+            <td>Closed</td>
+          </tr>
+          <tr>
+            <th scope="row">Tuesday to Friday</th>
+            <td>6:30 a.m. to 5:00 p.m.</td>
+          </tr>
+          <tr>
+            <th scope="row">Saturday</th>
+            <td>7:00 a.m. to 3:00 p.m.</td>
+          </tr>
+          <tr>
+            <th scope="row">Sunday</th>
+            <td>8:00 a.m. to 1:00 p.m.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+    <address>
+      218 Orchard Street, Duluth, MN 55802<br>
+      Phone: <a href="tel:+12185550176">(218) 555-0176</a><br>
+      Email: <a href="mailto:orders@northstarbakery.example">orders@northstarbakery.example</a>
+    </address>
+  </footer>
+</body>
+</html>

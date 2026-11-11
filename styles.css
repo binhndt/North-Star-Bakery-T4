@@ -1,0 +1,612 @@
+/* ==========================================================
+   North Star Bakery - Visual Design System
+   Warm, handmade, and community centered.
+
+   Colors (4):
+     Cream    #FFF8F0  page background
+     Brown    #6B3E26  headings, links, buttons, footer
+     Peach    #D88C5A  accents, borders, hover states
+     Charcoal #2F2A26  body text
+
+   Fonts (2):
+     Georgia (serif)  headings
+     Arial (sans)     body text, navigation, forms
+   ========================================================== */
+
+:root {
+  --cream: #FFF8F0;
+  --brown: #6B3E26;
+  --peach: #D88C5A;
+  --charcoal: #2F2A26;
+
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  --space-s: 0.75rem;
+  --space-m: 1.25rem;
+  --space-l: 2rem;
+}
+
+/* ---------- Base (mobile first) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+audio {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  min-height: 3.5rem;
+  margin-bottom: var(--space-m);
+}
+
+/* ---------- Headings: serif, brown, clear hierarchy ---------- */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--brown);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 var(--space-m);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 var(--space-s);
+  padding-bottom: 0.35rem;
+  border-bottom: 3px solid var(--peach);
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.35rem;
+}
+
+p {
+  margin: 0 0 var(--space-s);
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--brown);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--charcoal);
+  text-decoration-color: var(--peach);
+  text-decoration-thickness: 3px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--brown);
+  outline-offset: 3px;
+}
+
+/* ---------- Skip link (visible only on keyboard focus) ---------- */
+a[href="#main-content"] {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background-color: var(--brown);
+  color: var(--cream);
+  padding: var(--space-s) var(--space-m);
+  z-index: 10;
+}
+
+a[href="#main-content"]:focus {
+  left: 0;
+}
+
+/* ---------- Header and navigation (Flexbox) ---------- */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-s);
+  padding: var(--space-s) var(--space-m);
+  border-bottom: 4px solid var(--peach);
+}
+
+header img {
+  display: block;
+  width: 7rem;
+  /* The logo file has a white background; multiply blends it into the cream page. */
+  mix-blend-mode: multiply;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.6rem 1rem;
+  min-height: 2.75rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--brown);
+}
+
+nav a:hover {
+  background-color: var(--peach);
+  color: var(--charcoal);
+}
+
+nav a[aria-current="page"] {
+  background-color: var(--brown);
+  color: var(--cream);
+}
+
+/* ---------- Main content ---------- */
+main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: var(--space-m) var(--space-m) var(--space-l);
+}
+
+section {
+  margin-bottom: var(--space-l);
+}
+
+main > h1 {
+  text-align: center;
+}
+
+/* Images keep their proportions and get a warm frame */
+main img,
+main video {
+  display: block;
+  border: 4px solid var(--peach);
+  border-radius: 0.5rem;
+  margin: 0 0 var(--space-m);
+}
+
+main picture {
+  display: block;
+}
+
+/* ---------- Home page ---------- */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  list-style: none;
+  margin: 0 0 var(--space-m);
+  padding: 0;
+}
+
+.feature-list li {
+  border: 2px solid var(--peach);
+  border-left-width: 8px;
+  border-radius: 0.5rem;
+  padding: var(--space-s) var(--space-m);
+  font-weight: bold;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+/* ---------- Card rows (products and staff) ---------- */
+.card-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+.card-row article {
+  border: 2px solid var(--peach);
+  border-radius: 0.5rem;
+  padding: var(--space-s) var(--space-m);
+}
+
+.card-row article p {
+  margin-bottom: 0;
+}
+
+/* ---------- Contact page ---------- */
+.info-row {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  max-width: 36rem;
+}
+
+fieldset {
+  margin: 0 0 var(--space-m);
+  padding: var(--space-s) var(--space-m) var(--space-m);
+  border: 2px solid var(--peach);
+  border-radius: 0.5rem;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: var(--brown);
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.6rem;
+  border: 2px solid var(--brown);
+  border-radius: 0.35rem;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+input[type="radio"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.4rem;
+  accent-color: var(--brown);
+}
+
+fieldset input[type="radio"] + label {
+  font-weight: normal;
+}
+
+button {
+  padding: 0.7rem 1.4rem;
+  border: 2px solid var(--brown);
+  border-radius: 2rem;
+  background-color: var(--brown);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--peach);
+  border-color: var(--peach);
+  color: var(--charcoal);
+}
+
+button[type="reset"] {
+  background-color: var(--cream);
+  color: var(--brown);
+}
+
+button[type="reset"]:hover {
+  background-color: var(--peach);
+  color: var(--charcoal);
+}
+
+/* Hours table */
+table {
+  width: 100%;
+  max-width: 28rem;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 0.35rem;
+}
+
+th,
+td {
+  padding: 0.55rem 0.75rem;
+  border: 2px solid var(--peach);
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--brown);
+  color: var(--cream);
+}
+
+tbody th {
+  color: var(--brown);
+}
+
+/* ---------- Figure ---------- */
+figure {
+  margin: 0 0 var(--space-m);
+  max-width: 32rem;
+}
+
+figure img {
+  margin-bottom: 0;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  padding-left: var(--space-s);
+  border-left: 4px solid var(--peach);
+  font-style: italic;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--brown);
+  color: var(--cream);
+  padding: var(--space-m);
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: var(--space-s);
+}
+
+footer address {
+  font-style: normal;
+}
+
+footer a {
+  color: var(--cream);
+}
+
+footer a:hover {
+  color: var(--peach);
+  text-decoration-color: var(--peach);
+}
+
+/* ==========================================================
+   Tablet and larger (768px and up)
+   ========================================================== */
+@media (min-width: 48em) {
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-s) var(--space-l);
+  }
+
+  header img {
+    width: 8rem;
+  }
+
+  nav ul {
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+
+  main {
+    padding: var(--space-l);
+  }
+
+  .feature-list {
+    flex-direction: row;
+  }
+
+  .feature-list li {
+    flex: 1 1 0;
+  }
+
+  .feature {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-l);
+  }
+
+  .feature picture {
+    flex: 3 1 0;
+  }
+
+  .feature p {
+    flex: 2 1 0;
+  }
+
+  .feature img {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .card-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card-row article {
+    flex: 1 1 14rem;
+  }
+
+  .info-row {
+    flex-direction: row;
+    gap: var(--space-l);
+  }
+
+  .info-row section {
+    flex: 1 1 0;
+  }
+
+  footer {
+    padding: var(--space-l);
+  }
+}
+
+/* ==========================================================
+   Large desktop (1024px and up)
+   ========================================================== */
+@media (min-width: 64em) {
+  body {
+    font-size: 1.125rem;
+  }
+
+  h1 {
+    font-size: 3.25rem;
+  }
+
+  main {
+    padding: 3rem var(--space-l);
+  }
+}
+
+/* ==========================================================
+   Interactive features (Touchstone 4)
+   ========================================================== */
+
+/* Product cards hold an "add to list" button at the bottom */
+.card-row article {
+  display: flex;
+  flex-direction: column;
+}
+
+.save-btn,
+.small-btn {
+  align-self: flex-start;
+  background-color: var(--cream);
+  color: var(--brown);
+  font-size: 0.95rem;
+}
+
+.save-btn {
+  margin-top: var(--space-s);
+  padding: 0.5rem 1rem;
+}
+
+.save-btn[aria-pressed="true"] {
+  background-color: var(--brown);
+  color: var(--cream);
+}
+
+.save-btn[aria-pressed="true"]:hover {
+  background-color: var(--peach);
+  color: var(--charcoal);
+}
+
+.small-btn {
+  padding: 0.35rem 0.9rem;
+}
+
+/* My Pre-Order List panel */
+#my-list {
+  border: 3px solid var(--peach);
+  border-radius: 0.5rem;
+  padding: var(--space-m);
+}
+
+#saved-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 var(--space-s);
+  padding: 0;
+}
+
+#saved-list:empty {
+  margin: 0;
+}
+
+#saved-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-s);
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--peach);
+}
+
+#list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+/* Form validation feedback (shown next to each field) */
+.error {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--brown);
+  font-weight: bold;
+}
+
+.error:not(:empty)::before {
+  content: "Error: ";
+}
+
+input.field-invalid,
+textarea.field-invalid {
+  border-width: 4px;
+  border-style: dashed;
+}
+
+#form-status,
+#prefill-note {
+  padding: var(--space-s) var(--space-m);
+  border-radius: 0.5rem;
+  max-width: 36rem;
+}
+
+#form-status {
+  border: 3px solid var(--brown);
+  font-weight: bold;
+}
+
+#prefill-note {
+  border: 2px solid var(--peach);
+}
+
+#list-actions[hidden],
+#form-status[hidden],
+#prefill-note[hidden] {
+  display: none;
+}
